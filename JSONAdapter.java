@@ -36,17 +36,17 @@ public class JSONAdapter {
     public static void writeCardsToFile(List<CreditCard> cards, String filename) throws Exception {
         JSONObject jsonObject = new JSONObject();
         JSONArray cardsArray = new JSONArray();
-
+    
         for (CreditCard card : cards) {
             JSONObject cardObject = new JSONObject();
-            cardObject.put("cardNumber", card.getCardNumber() != null ? card.getCardNumber() : JSONObject.NULL);
-            cardObject.put("expirationDate", card.getExpirationDate() != null ? card.getExpirationDate() : JSONObject.NULL);
-            cardObject.put("cardHolderName", card.getCardHolderName() != null ? card.getCardHolderName() : JSONObject.NULL);
             cardObject.put("cardType", card instanceof InvalidCreditCard ? "Invalid: empty/null card number" : card.getClass().getSimpleName());
+            cardObject.put("cardNumber", card.getCardNumber() != null ? card.getCardNumber() : JSONObject.NULL);
+
             cardsArray.put(cardObject);
         }
-
+    
         jsonObject.put("cards", cardsArray);
         Files.write(Paths.get(filename), jsonObject.toString(4).getBytes());
     }
+    
 }
