@@ -1,0 +1,62 @@
+{"cards": [
+    {
+        "cardHolderName": "John Doe",
+        "cardType": "MasterCard",
+        "cardNumber": "5567894523129089",
+        "expirationDate": "08/26"
+    },
+    {
+        "cardHolderName": "Martha Clark",
+        "cardType": "Visa",
+        "cardNumber": "4123456789123",
+        "expirationDate": "04/26"
+    },
+    {
+        "cardHolderName": "Jane S. Dayton",
+        "cardType": "AmericanExpress",
+        "cardNumber": "347856341908126",
+        "expirationDate": "03/23"
+    },
+    {
+        "cardHolderName": "John Doe",
+        "cardType": "Discover",
+        "cardNumber": "6011111100007756",
+        "expirationDate": "02/24"
+    },
+    {
+        "cardHolderName": "John Doe",
+        "cardType": "MasterCard",
+        "cardNumber": "5167894523129089",
+        "expirationDate": "08/26"
+    },
+    {
+        "cardHolderName": "Jane Dayton",
+        "cardType": "Visa",
+        "cardNumber": "4123456789123999",
+        "expirationDate": "03/23"
+    },
+    {
+        "cardHolderName": "Martha Clark",
+        "cardType": "AmericanExpress",
+        "cardNumber": "377856341908126",
+        "expirationDate": "03/25"
+    },
+    {
+        "cardHolderName": "John Doe",
+        "cardType": "MasterCard",
+        "cardNumber": "5367894523129089",
+        "expirationDate": "08/25"
+    },
+    {
+        "cardHolderName": "Jill Davis",
+        "cardType": "Discover",
+        "cardNumber": "6011*890HJrt6789",
+        "expirationDate": "05/25"
+    },
+    {
+        "cardHolderName": "John Doe",
+        "cardType": "Invalid: empty/null card number",
+        "cardNumber": null,
+        "expirationDate": "08/26"
+    }
+]}

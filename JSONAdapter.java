@@ -1,6 +1,5 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
-import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -16,13 +15,18 @@ public class JSONAdapter {
 
         for (int i = 0; i < cardsArray.length(); i++) {
             JSONObject cardObject = cardsArray.getJSONObject(i);
-            String cardNumber = cardObject.getString("cardNumber");
-            String expirationDate = cardObject.getString("expirationDate");
-            String cardHolderName = cardObject.getString("cardHolderName");
+            String cardNumber = cardObject.optString("cardNumber", null);
+            String expirationDate = cardObject.optString("expirationDate", null);
+            String cardHolderName = cardObject.optString("cardHolderName", null);
 
-            CreditCard card = CreditCardFactory.getCreditCard(cardNumber, expirationDate, cardHolderName);
-            if (card != null && card.isValid()) {
-                cards.add(card);
+            CreditCard card;
+            if (cardNumber != null && !cardNumber.isEmpty()) {
+                card = CreditCardFactory.getCreditCard(cardNumber, expirationDate, cardHolderName);
+                if (card != null && card.isValid()) {
+                    cards.add(card);
+                }
+            } else {
+                cards.add(new InvalidCreditCard(cardNumber, expirationDate, cardHolderName));
             }
         }
 
@@ -35,14 +39,14 @@ public class JSONAdapter {
 
         for (CreditCard card : cards) {
             JSONObject cardObject = new JSONObject();
-            cardObject.put("cardNumber", card.getCardNumber());
-            cardObject.put("expirationDate", card.getExpirationDate());
-            cardObject.put("cardHolderName", card.getCardHolderName());
-            cardObject.put("cardType", card.getClass().getSimpleName());
+            cardObject.put("cardNumber", card.getCardNumber() != null ? card.getCardNumber() : JSONObject.NULL);
+            cardObject.put("expirationDate", card.getExpirationDate() != null ? card.getExpirationDate() : JSONObject.NULL);
+            cardObject.put("cardHolderName", card.getCardHolderName() != null ? card.getCardHolderName() : JSONObject.NULL);
+            cardObject.put("cardType", card instanceof InvalidCreditCard ? "Invalid: empty/null card number" : card.getClass().getSimpleName());
             cardsArray.put(cardObject);
         }
 
         jsonObject.put("cards", cardsArray);
-        Files.write(Paths.get(filename), jsonObject.toString().getBytes());
+        Files.write(Paths.get(filename), jsonObject.toString(4).getBytes());
     }
 }
