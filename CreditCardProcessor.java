@@ -7,6 +7,8 @@ public class CreditCardProcessor {
             return new JSONAdapter();
         } else if (filename.endsWith(".csv")) {
             return new CSVAdapter();
+        } else if (filename.endsWith(".xml")) {
+            return new XMLAdapter();
         } else {
             throw new IllegalArgumentException("Unsupported file format");
         }
