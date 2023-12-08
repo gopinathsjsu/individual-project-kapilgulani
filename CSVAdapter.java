@@ -74,9 +74,14 @@ public class CSVAdapter implements Adapter {
     @Override
     public void writeCardsToFile(List<CreditCard> cards, String filename) throws Exception {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+            // Write the header line
+            writer.write("cardNumber,cardType");
+            writer.newLine();
+    
+            // Write the card details
             for (CreditCard card : cards) {
                 if (card == null) continue;  // Skip null cards
-
+    
                 String cardNumber = card.getCardNumber() != null ? card.getCardNumber() : "null";
                 String cardType = card instanceof InvalidCreditCard ?
                     ((InvalidCreditCard) card).getErrorMessage() :
@@ -86,4 +91,5 @@ public class CSVAdapter implements Adapter {
             }
         }
     }
+    
 }
