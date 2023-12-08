@@ -4,6 +4,10 @@
         "cardNumber": "5567894523129089"
     },
     {
+        "cardType": "Invalid: more than 19 digits",
+        "cardNumber": "59012345678901234567890"
+    },
+    {
         "cardType": "Visa",
         "cardNumber": "4123456789123"
     },
@@ -14,6 +18,10 @@
     {
         "cardType": "Discover",
         "cardNumber": "6011111100007756"
+    },
+    {
+        "cardType": "Invalid: not a possible card number",
+        "cardNumber": "3601112345678789"
     },
     {
         "cardType": "MasterCard",
@@ -32,7 +40,7 @@
         "cardNumber": "5367894523129089"
     },
     {
-        "cardType": "Discover",
+        "cardType": "Invalid: non numeric characters",
         "cardNumber": "6011*890HJrt6789"
     },
     {

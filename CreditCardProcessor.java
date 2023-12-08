@@ -2,13 +2,22 @@ import java.util.List;
 
 public class CreditCardProcessor {
 
+    private static Adapter getAdapter(String filename) {
+        if (filename.endsWith(".json")) {
+            return new JSONAdapter();
+        } else if (filename.endsWith(".csv")) {
+            return new CSVAdapter();
+        } else {
+            throw new IllegalArgumentException("Unsupported file format");
+        }
+    }
+
     public static void processFile(String inputFilename, String outputFilename) {
         try {
-            // Read the credit cards from the input file
-            List<CreditCard> creditCards = JSONAdapter.readCardsFromFile(inputFilename);
+            Adapter adapter = getAdapter(inputFilename);
 
-            // Write the processed credit cards to the output file
-            JSONAdapter.writeCardsToFile(creditCards, outputFilename);
+            List<CreditCard> creditCards = adapter.readCardsFromFile(inputFilename);
+            adapter.writeCardsToFile(creditCards, outputFilename);
 
             System.out.println("Processing completed successfully.");
         } catch (Exception e) {
