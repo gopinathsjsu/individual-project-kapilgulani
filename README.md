@@ -23,7 +23,9 @@ The project is configured in `.vscode/settings.json` to reference libraries stor
 Make sure you are in the project root directory.
 
 1. **Compile the Project**:
-  ```javac -cp ".;lib/*" *.java  
+- Compile all files: 
+  ``` 
+  javac -cp ".;lib/*" *.java  
     ```
 
 2. **Run the Application**:
