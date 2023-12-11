@@ -9,6 +9,8 @@ This project implements a credit card processing system in Java, capable of read
 - The project's Java files are located at the root directory.
 - `lib`: the folder to maintain dependencies.
 - `.vscode/settings.json`: contains project settings including referenced libraries.
+- `Test`: the folder contains the unit test for every java class of the project.
+- `uml`: contains the class diagram of all the design patterns used in the project.
 - Compiled output files are generated in the root folder by default.
 
 ## Project Configuration
@@ -56,10 +58,10 @@ The system addresses the challenge of parsing and processing credit card records
 
 **UML Class Diagram for Factory Pattern Implementation:**
 
-![UML Class Diagram for Factory Pattern]()
+![UML Class Diagram for Factory Pattern](https://github.com/gopinathsjsu/individual-project-kapilgulani/blob/main/uml/Factory_Pattern.png)
 
 **UML Class Diagram for Strategy Pattern Implementation:**
-![UML Class Diagram for Strategy Pattern]()
+![UML Class Diagram for Strategy Pattern](https://github.com/gopinathsjsu/individual-project-kapilgulani/blob/main/uml/Strategy_pattern.png)
 
 
 
