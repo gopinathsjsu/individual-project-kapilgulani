@@ -21,9 +21,12 @@ The project is configured in `.vscode/settings.json` to reference libraries stor
 Make sure you are in the project root directory.
 
 1. **Compile the Project**:
->javac -cp ".;lib/*" *.java
+  ```
+    javac -cp ".;lib/*" *.java  
+    ```
 
 2. **Run the Application**:
+The main method is in the CreditCardProcessor class.
 - For CSV files:
   ```
     java -cp ".;lib/*" CreditCardProcessor input_file.csv output_file.csv  
@@ -50,16 +53,25 @@ The system addresses the challenge of parsing and processing credit card records
 
 - **Factory Pattern**: In `CreditCardFactory`, creates instances of different credit card types based on card numbers.
 - **Strategy Pattern**: Through `Strategy` interface with implementations like `CSVStrategy`, `JSONStrategy`, and `XMLStrategy`, for flexible file parsing.
-- **Singleton Pattern**: Used in utility classes to ensure a single instance.
+
+**UML Class Diagram for Factory Pattern Implementation:**
+
+![UML Class Diagram for Factory Pattern]()
+
+**UML Class Diagram for Strategy Pattern Implementation:**
+![UML Class Diagram for Strategy Pattern]()
+
+
 
 ## Consequences of Using These Patterns
 
 - **Factory Pattern**:
-- *Pros*: Simplifies object creation and centralizes logic.
-- *Cons*: The factory class may require modifications for new card types.
+*Pros*: Simplifies object creation and centralizes logic.
+*Cons*: The factory class may require modifications for new card types.
+
 - **Strategy Pattern**:
-- *Pros*: Enhances flexibility and scalability for file parsing.
-- *Cons*: Can introduce complexity with multiple strategy classes.
+ *Pros*: Enhances flexibility and scalability for file parsing.
+ *Cons*: Can introduce complexity with multiple strategy classes.
 
 ## Dependency Management
 
