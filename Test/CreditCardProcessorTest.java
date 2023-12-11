@@ -5,14 +5,14 @@ import org.junit.jupiter.api.Test;
 class CreditCardProcessorTest {
 
     @Test
-    void testGetStrategyJSON() {
-        Strategy strategy = CreditCardApp.getStrategy("data.json");
+    void testJSONStrategy() {
+        Strategy strategy = CreditCardProcessor.getStrategy("data.json");
         assertTrue(strategy instanceof JSONStrategy);
     }
 
     @Test
-    void testGetStrategyCSV() {
-        Strategy strategy = CreditCardApp.getStrategy("data.csv");
+    void testCSVStrategy() {
+        Strategy strategy = CreditCardProcessor.getStrategy("data.csv");
         assertTrue(strategy instanceof CSVStrategy);
     }
 

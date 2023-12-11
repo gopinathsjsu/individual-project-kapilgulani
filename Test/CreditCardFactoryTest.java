@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 class CreditCardFactoryTest {
 
     @Test
-    void testCreateVisaCard() {
+    void testCreateVisa() {
         CreditCard card = CreditCardFactory.getCreditCard("4111111111111111", "08/27", "Eve");
         assertTrue(card instanceof Visa);
     }
@@ -29,7 +29,7 @@ class CreditCardFactoryTest {
     }
 
     @Test
-    void testCreateInvalidCard() {
+    void testCreateInvalidCreditCard() {
         CreditCard card = CreditCardFactory.getCreditCard("0000000000000000", "12/31", "Ivy");
         assertTrue(card instanceof InvalidCreditCard);
     }
