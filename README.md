@@ -23,8 +23,7 @@ The project is configured in `.vscode/settings.json` to reference libraries stor
 Make sure you are in the project root directory.
 
 1. **Compile the Project**:
-  ```
-    javac -cp ".;lib/*" *.java  
+  ```javac -cp ".;lib/*" *.java  
     ```
 
 2. **Run the Application**:
@@ -61,6 +60,7 @@ The system addresses the challenge of parsing and processing credit card records
 ![UML Class Diagram for Factory Pattern](https://github.com/gopinathsjsu/individual-project-kapilgulani/blob/main/uml/Factory_Pattern.png)
 
 **UML Class Diagram for Strategy Pattern Implementation:**
+
 ![UML Class Diagram for Strategy Pattern](https://github.com/gopinathsjsu/individual-project-kapilgulani/blob/main/uml/Strategy_pattern.png)
 
 
