@@ -23,10 +23,9 @@ The project is configured in `.vscode/settings.json` to reference libraries stor
 Make sure you are in the project root directory.
 
 1. **Compile the Project**:
-- Compile all files: 
-  ``` 
+
   javac -cp ".;lib/*" *.java  
-    ```
+
 
 2. **Run the Application**:
 The main method is in the CreditCardProcessor class.
