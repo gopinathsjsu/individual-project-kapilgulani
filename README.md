@@ -24,8 +24,7 @@ Make sure you are in the project root directory.
 
 1. **Compile the Project**:
 
-  javac -cp ".;lib/*" *.java  
-
+- javac -cp ".;lib/*" *.java 
 
 2. **Run the Application**:
 The main method is in the CreditCardProcessor class.
